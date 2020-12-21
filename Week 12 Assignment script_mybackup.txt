@@ -1,0 +1,24 @@
+#!/bin/bash
+# Week-12 Assignment: File backup script
+# Topic: mybackup1.sh
+# 11/28/2020 : Jayamanna T. Seneviratne
+# This script uses functions from $HOME/homework/week-12/lab-12/myfunctions
+#
+
+. $HOME/homework/week-12/lab-12/myfunctions
+
+
+echo "Welcome to version 2.0 of my backup script"
+echo "This program backs up to the Cloud"
+
+echo -n "What is your name? "
+   read name
+
+echo -n "$name, would you like to backup your local directories [Y/N]: "
+   read ans
+     if [[ "$ans" =~ ^([yY][eE][sS]|[yY])$ ]]
+         then
+            menu
+     else
+         echo "Thanks for using my script"
+     fi
