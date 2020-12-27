@@ -1,0 +1,81 @@
+#!/bin/bash
+#myFunctions
+#12/18/2020
+#by Jayamanna Therese Seneviratne
+#This is final-exam functions file for a Calculator Program named myCalculator
+
+calc_menu() {
+cat <<END
+    Please select an option:
+  -------------------------------
+          1. Add
+          2. Subtract
+          3. Multiply
+          4. Divide
+          5. Quit menu
+          6. Enter numbers
+  -------------------------------
+END
+read_input
+}
+
+
+add_function(){
+
+echo "This is addition of numbers"
+   let ans=x+y
+   echo $ans
+}
+
+
+subtract_function() {
+
+echo "This is subtraction of numbers"
+     let ans=x-y
+     echo $ans
+
+}
+
+
+multiply_function() {
+
+echo "This is multiplication of numbers"
+   let ans=x*y
+   echo $ans
+}
+
+
+division_function(){
+
+echo "This is division of numbers"
+    let ans=x/y
+    echo $ans
+}
+
+
+read_input() {
+while true
+  do
+  echo -n "Please select an option to continue: "
+     read option
+        case $option in
+          1|Add|add)
+          add_function ;;
+          2|Subtract|subtract)
+          subtract_function ;;
+          3|Multiply|multiply)
+          multiply_function ;;
+          4|Divide|divide)
+          division_function ;;
+          5|Quit|quit|"Quit menu")
+            echo "Exiting program"
+            break ;;
+          6|"Enter numbers")
+            echo -n "Please enter two numbers: "
+            read x y
+            calc_menu ;;
+           *)
+            echo "This is not a valid option. Please try again." ;;
+         esac
+   done
+}
