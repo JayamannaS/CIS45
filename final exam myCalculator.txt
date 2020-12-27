@@ -1,0 +1,25 @@
+#!/bin/bash
+#12/18/2020
+#by Jayamanna Therese Seneviratne
+#myCalculator
+#This is final-exam Calculator Program
+#This script uses functions file from $HOME/final-exam/myFunctions
+#
+#
+. $HOME/final-exam/myFunctions
+#
+echo "This is a math calculator"
+echo "Have Fun!"
+#
+#
+echo -n "Please enter two numbers: "
+read x y
+
+if ((y==0))
+  then
+    echo "Please enter a non-zero number for second number: "
+    read y
+    calc_menu
+  else
+    calc_menu
+fi
